@@ -19,6 +19,8 @@ public Deck() {
 			deck.add(new Card(s,r)); // add cards to the deck
 		}
 	}
+	
+	
 }
 public Card dealCard() { //needs remove instead of get to pick the card up
 	return deck.remove(0);
