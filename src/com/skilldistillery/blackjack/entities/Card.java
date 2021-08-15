@@ -33,7 +33,7 @@ public class Card {
 		return rank == other.rank && suit == other.suit;
 	}
 
-	int getValue() {
+	public int getValue() {
 		return this.rank.getValue();
 	}
 }
