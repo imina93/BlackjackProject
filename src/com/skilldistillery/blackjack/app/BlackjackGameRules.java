@@ -8,7 +8,7 @@ import com.skilldistillery.blackjack.entities.Player;
 public class BlackjackGameRules {
 	private BlackjackPlayer bjPlayer;
 	private BlackjackDealer dealer;
-	private Scanner kb;
+	private Scanner kb; 
 
 	public static void main(String[] args) {
 		BlackjackGameRules app = new BlackjackGameRules();
@@ -39,7 +39,7 @@ public class BlackjackGameRules {
 			System.out.println("Goodbye!");
 			break;
 		default:
-			System.out.println("Not a valid option. Please enter 1 or 2.");
+			System.err.println("Error. Please enter 1 or 2.");
 			selection = kb.nextInt();
 			break;
 		}
@@ -73,7 +73,7 @@ public class BlackjackGameRules {
 		System.out.println("\nWould you like to play another hand?");
 		System.out.println("\nEnter 1 to Play");
 		System.out.println("Enter 2 to Exit");
-		System.out.print(">>");
+		System.out.print("\u2665 \u2660 \u2666 \u2663 \u2665 \u2660 \u2666 \u2663");
 		int selection = kb.nextInt();
 		switch (selection) {
 		case 1:
@@ -84,7 +84,7 @@ public class BlackjackGameRules {
 			System.exit(0);
 			break;
 		default:
-			System.out.println("Not a valid option. Please enter 1 or 2.");
+			System.err.println("Error. Please enter 1 or 2.");
 			selection = kb.nextInt();
 			break;
 		}
@@ -124,7 +124,7 @@ public class BlackjackGameRules {
 			playerHit();
 			break;
 		case 2:
-			System.out.println("You've elected to stay. Dealer's move.");
+			System.out.println("Player has selected stay. Dealer's move.");
 			if (bjPlayer.getHandValue() <= 21 && dealer.getHandValue() < 17) {
 				dealerHit();
 				dealer.isBust();
@@ -145,7 +145,7 @@ public class BlackjackGameRules {
 			break;
 
 		default:
-			System.out.println("Not a valid option. Please enter 1 or 2.");
+			System.err.println("Error. Please enter 1 or 2.");
 			selection = kb.nextInt();
 			break;
 		}
@@ -212,7 +212,7 @@ public class BlackjackGameRules {
 
 	private void checkDeck() {
 		if (dealer.getDeckSize() < 14) {
-			System.out.println("\n...shuffling new deck...");
+			System.out.println("\n Reshuffling deck.");
 			dealer = new BlackjackDealer();
 			dealer.dealerShuffle();
 		}

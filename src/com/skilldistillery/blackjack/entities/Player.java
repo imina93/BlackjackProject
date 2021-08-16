@@ -2,7 +2,7 @@ package com.skilldistillery.blackjack.entities;
 
 public class Player {
 Hand playerHand;
-private String name;
+private String name; // get rid of wallet
 
 public Player (Hand hand) {
 	this.playerHand = hand;
